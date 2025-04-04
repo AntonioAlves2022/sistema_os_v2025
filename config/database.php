@@ -10,8 +10,7 @@ $conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 
 // Retorna um erro caso a conexão falhe
 if(!$conn){
-    die("Erro de conexão do MYSQL : "
-    .mysqli_connect.error())
+    die("Erro de conexão do MYSQL : ".mysqli_connect.error())
 }
 
 // Script de criação das tabelas
@@ -36,8 +35,7 @@ FOREIGN KEY(usuario_id) references(usuarios)
 ";
 
 if(!mysqli_multi_query($conn, $sql)){
-    echo "Erro ao criar as tabelas:"
-    .mysqli_error($conn);
+    echo "Erro ao criar as tabelas:".mysqli_error($conn);
 }
 
 while(mysqli_next_result($conn)){;}
